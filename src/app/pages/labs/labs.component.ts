@@ -10,9 +10,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './labs.component.css'
 })
 export class LabsComponent {
-  tasks=['Amorcito','Orion','Smoke','Chirran','Jere','Niño','gata','michin','lora','tomisito'];
-  name ='Daniel';
-  esposa='MI chilanguito';
+ 
 
   person ={
     name: 'Daniel',
