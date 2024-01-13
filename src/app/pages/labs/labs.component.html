@@ -1,5 +1,21 @@
-<p>labs works!</p>
-
+<div class="container"><p>labs works!</p>
+  <p>Metodo Iterador</p>
+<ul>
+  <li *ngFor="let task of tasks">
+  {{task}}</li>
+</ul>
 <hr />
-<button (click)="clickHandler()"> Click me</button>
+<h2>{{ 'Hola'.repeat(4) }}</h2>
+<p>Asignacion de Variables Labs </p>
 
+<p>Yo soy {{ name }} de  {{ valor }}</p>
+<hr />
+<input type="text" [value]="name" >
+<hr />
+<p>(change)</p>
+<p>Registro de Eventos </p>
+
+<button (click)="clickHandler()"> Click me</button>
+<input type="number" [value]="person.age" (change)="cHandler($event)" >
+
+</div>
