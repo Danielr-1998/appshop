@@ -9,6 +9,7 @@
           placeholder="Type new todo"
           autofocus
           type="text"
+          (change)="changeHandler($event)"
         />
       </div>
     </header>
@@ -16,17 +17,17 @@
       <!-- This section should be hidden by default and shown when there are todos -->
       <section class="main">
         <ul class="todo-list">
-          <li class="completed">
+          <li  *ngFor="let task of tasks(); index as i">
             <div class="view">
-              <input class="toggle" type="checkbox" checked />
-              <label>Learn JavaScript</label>
-              <button class="destroy"></button>
+              <input class="toggle" type="checkbox"  />
+              <label>{{ task }}</label>
+              <button class="destroy" (click)="deletetask(i)"></button>
             </div>
             <input class="edit" value="Learn JavaScript" />
           </li>
           <li>
             <div class="view">
-              <input class="toggle" type="checkbox" />
+              CommonModule    <input class="toggle" type="checkbox" />
               <label>Buy a unicorn</label>
               <button class="destroy"></button>
             </div>
