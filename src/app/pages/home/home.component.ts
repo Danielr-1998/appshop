@@ -30,13 +30,15 @@ export class HomeComponent {
       id: Date.now(),
       title,
       completed:false,
-    }
+    };
+    this.tasks.update((tasks) => [...tasks,newTask]);
+
   }
 
   changeHandler(event:Event){
     const input=event.target as HTMLInputElement;
     const newTask= input.value;
-    this.tasks.update((tasks) => [...tasks,newTask]);
+    this.addTask(newTask);
   }
 
   deletetask(index: number){

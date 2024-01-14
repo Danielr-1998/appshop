@@ -20,7 +20,7 @@
           <li  *ngFor="let task of tasks(); index as i">
             <div class="view">
               <input class="toggle" type="checkbox"  />
-              <label>{{ task }}</label>
+              <label id={{task.id}}>{{ task.title }}</label>
               <button class="destroy" (click)="deletetask(i)"></button>
             </div>
             <input class="edit" value="Learn JavaScript" />
