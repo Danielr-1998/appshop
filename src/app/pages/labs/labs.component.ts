@@ -25,4 +25,5 @@ export class LabsComponent {
   cHandler(event:Event){
     console.log(event);
   }
+  
 }

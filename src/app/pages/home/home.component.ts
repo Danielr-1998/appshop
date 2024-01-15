@@ -34,6 +34,20 @@ export class HomeComponent {
     this.tasks.update((tasks) => [...tasks,newTask]);
 
   }
+  updateTask(index:number){
+    this.tasks.update((tasks)=> {
+      return tasks.map((task , position) => {
+        if(position === index){
+          return{
+            ...task,
+            completed: !task.completed
+          }
+        }
+        return task;
+        })
+      })
+    }
+  
 
   changeHandler(event:Event){
     const input=event.target as HTMLInputElement;

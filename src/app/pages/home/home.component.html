@@ -19,8 +19,8 @@
         <ul class="todo-list">
           <li  *ngFor="let task of tasks(); index as i">
             <div class="view">
-              <input class="toggle" type="checkbox"  />
-              <label id={{task.id}}>{{ task.title }}</label>
+              <input class="toggle" type="checkbox" [checked]="task.completed" (change)="updateTask(i)" />
+              <label >{{ task.title }}</label>
               <button class="destroy" (click)="deletetask(i)"></button>
             </div>
             <input class="edit" value="Learn JavaScript" />
@@ -46,8 +46,10 @@
       <!-- This footer should be hidden by default and shown when there are todos -->
       <footer class="footer">
         <!-- This should be `0 items left` by default -->
-        <span class="todo-count"><strong>0</strong> item left</span>
-        <!-- Remove this if you don't implement routing -->
+        <span class="todo-count">
+          <strong>{{ tasks().length }}</strong>
+          {{ tasks().length === 1 ? 'item' : 'items' }}
+        </span>        <!-- Remove this if you don't implement routing -->
         <ul class="filters">
           <li>
             <a routerLink="/" class="selected">All</a>
