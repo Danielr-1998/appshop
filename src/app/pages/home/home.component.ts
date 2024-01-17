@@ -47,7 +47,7 @@ export class HomeComponent {
         })
       })
     }
-  
+
 
   changeHandler(event:Event){
     const input=event.target as HTMLInputElement;
