@@ -21,4 +21,6 @@
 </div>
 <div *ngIf="person.name == 'name'">
   Contenido
+  <input type="color" [formControl]="colorCtrl">
+  <p>color : {{ colorCtrl.value }}</p>
 </div>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
@@ -26,4 +26,10 @@ export class LabsComponent {
     console.log(event);
   }
   
+  colorCtrl = new FormControl();
+  constructor(){
+    this.colorCtrl.valueChanges.subscribe(value =>{
+      console.log(value);
+    })
+  }
 }
