@@ -13,7 +13,7 @@ export class LabsComponent {
   tasks=['Valor 1','Valor 2','Valor 3','Valor 4','Valor 5'];
   name ='name';
   valor='valor';
-
+ 
   person ={
     name: 'name',
     age:25
