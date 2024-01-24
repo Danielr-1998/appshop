@@ -2,12 +2,13 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ConstantPool } from '@angular/compiler';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { task } from './../../models/task.model';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -24,6 +25,13 @@ export class HomeComponent {
       completed: false
     }
   ]);
+
+  newTaskCTRL = new FormControl('',{
+    nonNullable:true,
+    validators: [
+      Validators.required,
+    ]
+  });
 
   addTask(title:string){
     const newTask={
@@ -49,10 +57,12 @@ export class HomeComponent {
     }
 
 
-  changeHandler(event:Event){
-    const input=event.target as HTMLInputElement;
-    const newTask= input.value;
-    this.addTask(newTask);
+  changeHandler(){
+    if(this.newTaskCTRL.valid){
+      const value=this.newTaskCTRL.value;
+      this.addTask(value);
+      this.newTaskCTRL.setValue('');
+    }
   }
 
   deletetask(index: number){

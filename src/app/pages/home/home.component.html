@@ -9,8 +9,9 @@
           placeholder="Type new todo"
           autofocus
           type="text"
-          (change)="changeHandler($event)"
-        />
+          [formControl]="newTask"
+          (keydown.enter)="changeHandler()"
+          />
       </div>
     </header>
     <div class="container appshop-wrapper">
