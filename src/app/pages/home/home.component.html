@@ -9,7 +9,7 @@
           placeholder="Type new todo"
           autofocus
           type="text"
-          [formControl]="newTask"
+          [formControl]="newTaskCTRL"
           (keydown.enter)="changeHandler()"
           />
       </div>
@@ -66,4 +66,5 @@
         <button class="clear-completed">Clear completed</button>
       </footer>
     </div>
+    
   </section>

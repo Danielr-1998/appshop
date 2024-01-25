@@ -59,9 +59,11 @@ export class HomeComponent {
 
   changeHandler(){
     if(this.newTaskCTRL.valid){
-      const value=this.newTaskCTRL.value;
-      this.addTask(value);
-      this.newTaskCTRL.setValue('');
+      const value=this.newTaskCTRL.value.trim();
+      if( value !== ''){
+        this.addTask(value);
+        this.newTaskCTRL.setValue('');
+      }
     }
   }
 
