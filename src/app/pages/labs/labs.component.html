@@ -30,4 +30,11 @@
   </svg>
   <input type="number" [formControl]="widthCtrl">
   <span class="box" [style.width.px]="widthCtrl.value"></span>
+  <p>
+    <input type="text" [formControl]="colorCtrl"><br/>
+      <span class="message-error" *ngIf="nameCtrl.invalid && nameCtrl.touched">No valido</span>
+  </p>
+  <p>
+    <input type="text">
+  </p>
 </div>
